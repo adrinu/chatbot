@@ -1,12 +1,13 @@
 from socketserver import TCPServer, UDPServer, BaseRequestHandler
 from random import choice
-
+import logging
+logging.basicConfig(filename="log.log", level=logging.DEBUG)
 # Chatbot responses and keywords to trigger response
-greeting_response = ["Hello!", "Hi", "Bonjour", "Hola", "Nice to meet you!", "heyyy <3"], 
+greeting_response = ["Hello!", "Hi", "Bonjour", "Hola", "Nice to meet you!", "heyyy <3"] 
 greeting_keywords = ["hi", "hello", "hey", "bonjour", "meet", "greetings", "hola"]
 
 feels_response = ["Thats great to hear!", "Cheer up!", "Sounds like you a bitch", "Grow up", "I aint ur therapist"]
-feels_keywords = ["sad", "happy", "mad", "angry", "tired", "stressed", "stress", "frustrated", "good", "great"], 
+feels_keywords = ["sad", "happy", "mad", "angry", "tired", "stressed", "stress", "frustrated", "good", "great", "lonely"]
 
 robot_feels_reponse = ["Im doing good", "I am not capable of emotions", "I wish I was a human", "Amazing! How are you doing?"]
 robot_feels_keywords = ["are you", "mood", "how"]
@@ -47,7 +48,8 @@ def generate_response(msg):
         return choice(name_response)
     
     for keyword in greeting_keywords:
-        if keyword in lower:
+        logging.debug(type(keyword))
+        if keyword in lower: 
             return choice(greeting_response)
     
     for keyword in weather_keywords:
@@ -66,7 +68,7 @@ def generate_response(msg):
         if keyword in lower:
             return choice(feels_response)
     
-    return "I dont know how to response to that! >:("
+    return "I dont know how to respond to that! >:("
     
 def run_server(HOST, PORT, SERVER_TYPE):
     """

@@ -1,4 +1,4 @@
-# ChatBot
+# Chatbot
 
 Homework assignment from my Computer Networking class CS-UY 4973G
 
@@ -25,3 +25,5 @@ Run python file
 ```bash
   python client.py
 ```
+
+To quit chatting with the chatbot, say "Bye"
