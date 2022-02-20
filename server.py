@@ -5,13 +5,16 @@ from random import choice
 greeting_response = ["Hello!", "Hi", "Bonjour", "Hola", "Nice to meet you!", "heyyy <3"] 
 greeting_keywords = ["hi", "hello", "hey", "bonjour", "meet", "greetings", "hola"]
 
-feels_response = ["Thats great to hear!", "Cheer up!", "Sounds like you a bitch", "Grow up", "I aint ur therapist"]
+leave_reponse = ["You are stuck here chatting with me forever mwhahaha", "Wrong message to exit!", "You trying to leave? Not on my watch!"]
+leave_keywords = ["Bye", "bye", "bai", "see you", "cya", "later"]
+
+feels_response = ["Thats great to hear!", "Cheer up!", "Ok cool", "Grow up", "I aint ur therapist"]
 feels_keywords = ["sad", "happy", "mad", "angry", "tired", "stressed", "stress", "frustrated", "good", "great", "lonely"]
 
 robot_feels_reponse = ["Im doing good", "I am not capable of emotions", "I wish I was a human", "Amazing! How are you doing?"]
 robot_feels_keywords = ["are you", "mood", "how"]
 
-creator_response = ["I was created by Adrian!", "Some kid in university", "I was created in python"]
+creator_response = ["I was created by Adrian!", "Some kid in university", "I was created using python"]
 creator_keywords = ["creator", "maker", "birth", "created", "create"]
 
 weather_response = ["I have no idea!", "Its sunny somewhere!", "Its raining somewhere!"]
@@ -36,6 +39,9 @@ def generate_response(msg):
         str: Random response that is related to the client query
     """
     lower = str(msg.lower())
+    if lower == "bye!":
+        return "DONT LEAVE ME PLEASE"
+    lower = lower.replace("?", "").replace("!", "").replace(".", "")
     # Checks for keyword and returns a random response
     if "sports" in lower:
         return choice(sports_response)
@@ -65,6 +71,10 @@ def generate_response(msg):
     for keyword in feels_keywords:
         if keyword in lower:
             return choice(feels_response)
+    
+    for keyword in leave_keywords:
+        if keyword in lower:
+            return choice(leave_reponse)
     
     return "I dont know how to respond to that! >:("
     

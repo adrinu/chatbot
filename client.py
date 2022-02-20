@@ -94,7 +94,7 @@ if __name__ == "__main__":
     
     # User keeps asking the ChatBot until they say bye
     message = input("You: ")
-    while message != "Bye":
+    while message != "Bye!":
         send_message(message)
         message = input("You: ")
     
