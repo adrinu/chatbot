@@ -53,7 +53,7 @@ def recieve_message(sock):
     msg = str(sock.recv(1024))
     
     # Outputs it
-    print("ChatBot: {}\n".format(msg.replace("b", "").replace("'", "")))
+    print("ChatBot: {}\n".format(msg.replace("b'", "").replace("'", "")))
         
 
 if __name__ == "__main__":
