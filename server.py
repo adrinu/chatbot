@@ -47,7 +47,6 @@ def generate_response(msg):
         return choice(name_response)
     
     for keyword in greeting_keywords:
-        logging.debug(type(keyword))
         if keyword in lower: 
             return choice(greeting_response)
     
