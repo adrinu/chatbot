@@ -1,7 +1,6 @@
 from socketserver import TCPServer, UDPServer, BaseRequestHandler
 from random import choice
-import logging
-logging.basicConfig(filename="log.log", level=logging.DEBUG)
+
 # Chatbot responses and keywords to trigger response
 greeting_response = ["Hello!", "Hi", "Bonjour", "Hola", "Nice to meet you!", "heyyy <3"] 
 greeting_keywords = ["hi", "hello", "hey", "bonjour", "meet", "greetings", "hola"]
