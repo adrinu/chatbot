@@ -23,7 +23,7 @@ Go to the project directory
 Run python file
 
 ```bash
-  python client.py
+  python3 client.py
 ```
 
 To quit chatting with the chatbot, say "Bye"
