@@ -11,13 +11,13 @@ The client sends messages over TCP/UDP (they get to choose) protocols to a serve
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/adrinu/chatbot.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd chatbot
 ```
 
 Run python file
